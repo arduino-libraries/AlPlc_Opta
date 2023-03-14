@@ -25,6 +25,6 @@ jobs:
           compliance: specification
           # TODO: This is only needed for standalone libraries.
           # Change this to "update" once the library is added to the index.
-          library-manager: submit
+          library-manager: update
           # Always use this setting for official repositories. Remove for 3rd party projects.
           official: true
