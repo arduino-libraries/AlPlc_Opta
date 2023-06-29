@@ -10,12 +10,11 @@
 #define ALPLC_OPTA_H
 
 #include <ArduinoRS485.h>
-#include <EthernetInterface.h>	//Ethernet, sockets, etc
+#include <PortentaEthernet.h>
 
 extern uint8_t m_PLCSharedVarsOutputBuf[];
 extern uint8_t m_PLCSharedVarsInputBuf[];
 
-extern EthernetInterface m_netInterface;
 
 class AlPlc
 {
