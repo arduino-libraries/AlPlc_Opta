@@ -12,6 +12,8 @@
 #include <ArduinoRS485.h>
 #include <PortentaEthernet.h>
 
+extern "C" void sysMbMRtu_SetPostDelay(uint16_t delay);
+
 extern uint8_t m_PLCSharedVarsOutputBuf[];
 extern uint8_t m_PLCSharedVarsInputBuf[];
 
