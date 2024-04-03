@@ -11,6 +11,7 @@
 
 #include <ArduinoRS485.h>
 #include <PortentaEthernet.h>
+#include <OptaBlue.h>
 
 extern "C" void sysMbMRtu_SetPostDelay(uint16_t delay);
 
