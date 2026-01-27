@@ -59,7 +59,7 @@ typedef uint8_t bool_t;
 	#define NUM_BUTTON_INPUTS		1
 
 	// At the moment lower than that actually supported by the library (OPTA_CONTROLLER_MAX_EXPANSION_NUM=10),
-	// agreed with Arduino to deal with maxium I2C speed.
+	// agreed with Arduino to deal with maximum I2C speed.
 	#define MAX_OPTA_IOEXP 5
 	typedef uint16_t ExpType_t;
 
