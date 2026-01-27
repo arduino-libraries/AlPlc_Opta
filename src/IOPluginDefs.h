@@ -1,6 +1,7 @@
+
 #pragma once
 
-// also defined in AlPlcMisrac.h ; howevere required here to let include this .h directly in the sketch
+// Also defined in AlPlcMisrac.h ; howevere required here to let include this .h directly in the sketch
 typedef uint8_t bool_t;
 
 #if defined( ARDUINO_PORTENTA_H7_M7 )
@@ -27,14 +28,14 @@ typedef uint8_t bool_t;
 
 #elif defined( ARDUINO_OPTA )
 
-	// da Arduino_Opta_Blueprint\src
-	// invece di includere OptaBlue.h che è la "radice" che tirerebbe dentro c++ include qui questo solo per numero i/o
+	// from Arduino_Opta_Blueprint\src
+    // instead of including OptaBlue.h, which is the root that would pull in C++, include this here just for I/O number
 	#include <DigitalCommonCfg.h>
 	#include <AnalogCommonCfg.h>
 
-	// diciture "simili" a quelle di DigitalCommonCfg.h
-	#define OPTA_ANALOG_IN_NUM		OA_AN_CHANNELS_NUM			// programmabile, fino a max 8
-	#define OPTA_ANALOG_OUT_NUM		OA_AN_CHANNELS_NUM			// programmabile, fino a max 8
+	// Definitions similar to that of DigitalCommonCfg.h
+	#define OPTA_ANALOG_IN_NUM		OA_AN_CHANNELS_NUM			// pragrammable, max 8 channels
+	#define OPTA_ANALOG_OUT_NUM		OA_AN_CHANNELS_NUM			// pragrammable, max 8 channels
 	#define OPTA_PWM_OUT_NUM		OA_PWM_CHANNELS_NUM			// 4 pwm
 	#define OPTA_LED_OUT_NUM		OA_LED_NUM
 
@@ -57,7 +58,8 @@ typedef uint8_t bool_t;
 	#define NUM_LED_OUTPUTS			7
 	#define NUM_BUTTON_INPUTS		1
 
-	// al momento minore di quello effettivamente supportato dalla libreria (OPTA_CONTROLLER_MAX_EXPANSION_NUM=10), concordato con Arduino
+	// At the moment lower than that actually supported by the library (OPTA_CONTROLLER_MAX_EXPANSION_NUM=10),
+	// agreed with Arduino to deal with maxium I2C speed.
 	#define MAX_OPTA_IOEXP 5
 	typedef uint16_t ExpType_t;
 
@@ -65,7 +67,7 @@ typedef uint8_t bool_t;
 
 	#define IO_TOT_DIGITAL_INPUTS		(NUM_PROG_INPUTS + NUM_BUTTON_INPUTS + MAX_OPTA_IOEXP*OPTA_DIGITAL_IN_NUM)
 	#define IO_TOT_DIGITAL_OUTPUTS		(NUM_RELAY_OUTPUTS + NUM_LED_OUTPUTS + MAX_OPTA_IOEXP*OPTA_DIGITAL_OUT_NUM)
-	// poichè su exp digitale i prog inputs si possono usare anche come analog e sono di più degli input della exp analogica, usa quelli
+	// since on digital exp the prog inputs can also be used as analog and are more than the inputs of the analog exp, use those
 	#define IO_TOT_ANALOG_INPUTS		(NUM_PROG_INPUTS + MAX_OPTA_IOEXP*OPTA_DIGITAL_IN_NUM)
 	#define IO_TOT_ANALOG_OUTPUTS		(MAX_OPTA_IOEXP*IO_TOT_ANEXP_OUT)
 
